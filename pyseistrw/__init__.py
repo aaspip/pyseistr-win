@@ -61,29 +61,27 @@ from .pwsmooth import *
 from .pwspray2d import *
 
 from .das import coh 
-from .das import cohc
+# from .das import cohc
 
 from .synthetics import *
-from .rgt import *
 from .smooth import *
 
-## C versions
-from .dip2d import dip2dc
-from .dip3d import dip3dc
-from .somean2d import somean2dc
-from .somean3d import somean3dc
-from .somf2d import somf2dc
-from .somf3d import somf3dc
-from .soint2d import soint2dc
-from .soint3d import soint3dc
-from .sint import sint2dc
-from .sint import sint3dc
-from .bp import bandpassc
-
-from dipcfun import *
-from sofcfun import *
-from sof3dcfun import *
-from bpcfun import *
+## C versions (deactivated in windows version)
+# from .dip2d import dip2dc
+# from .dip3d import dip3dc
+# from .somean2d import somean2dc
+# from .somean3d import somean3dc
+# from .somf2d import somf2dc
+# from .somf3d import somf3dc
+# from .soint2d import soint2dc
+# from .soint3d import soint3dc
+# from .sint import sint2dc
+# from .sint import sint3dc
+# from .bp import bandpassc
+# from dipcfun import *
+# from sofcfun import *
+# from sof3dcfun import *
+# from bpcfun import *
 
 
 

@@ -1,5 +1,4 @@
 import numpy as np
-from dipcfun import *
 
 def dip3d(din,niter=5,liter=10,order=2,eps_dv=0.01, eps_cg=1, tol_cg=0.000001,rect=[5,5,5],verb=1):
 	'''
@@ -55,66 +54,6 @@ def dip3d(din,niter=5,liter=10,order=2,eps_dv=0.01, eps_cg=1, tol_cg=0.000001,re
 		dip_x=dip_x+ratio_x;
 
 	return dip_i,dip_x
-
-def dip3dc(din,niter=5,liter=10,order=2,eps_dv=0.01, eps_cg=1, tol_cg=0.000001,rect=[5,5,5],verb=1,runc=1,mask=None):
-	'''
-	dip3dc: 3D dip estimation based on shaping regularized PWD algorithm
-	(C implementation)
-	
-	Ported to Python by Yangkang Chen, 2022, verified to be exactly the same as the Matlab version
-	
-	INPUT
-	din: input data (nt*nx)
-	niter: number of nonlinear iterations
-	liter: number of linear iterations (in divn)
-	order: accuracy order
-	eps_dv: eps for divn  (default: 0.01)
-	eps_cg: eps for CG	(default: 1)
-	tol_cg: tolerence for CG (default: 0.000001)
-	rect:  smoothing radius (ndim*1)
-	verb: verbosity flag
-	runc: if runc
-	 
-	OUTPUT
-	dipi:  inline 3D slope
-	dipx:  xline 3D slope
-	'''
-	from .divne import divne
-	
-	dim = 3;
-	n = np.zeros(dim,dtype='int');
-	n1 = din.shape[0];
-	n2 = din.shape[1];
-	n3 = din.shape[2];
-	n[0] = n1;
-	n[1] = n2;
-	n[2] = n3;
-
-	n123 = din.size;
-
-	r1=rect[0]
-	r2=rect[1]
-	r3=rect[2]
-	
-	if mask is None:
-		din=np.float32(din.flatten(order='F'));
-		hasmask=0
-	else:
-		if din.size != mask.size:
-			Exception("Mask and Data should have the same dimension")
-		else:
-			din=np.float32(np.concatenate([din.flatten(order='F'),mask.flatten(order='F')],axis=0));
-			hasmask=1;
-	
-	dip=dipc(din,n1,n2,n3,niter,liter,order,eps_dv,eps_cg,tol_cg,r1,r2,r3,hasmask,verb);
-	dip=dip.reshape(n1,n2,n3,2,order='F');
-	
-	dip_i=dip[:,:,:,0]
-	dip_x=dip[:,:,:,1]	
-	
-
-	return dip_i,dip_x
-
 
 def conv_allpass_i(din,dip,order):
 	'''

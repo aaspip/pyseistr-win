@@ -1,5 +1,4 @@
 import numpy as np
-from bpcfun import *
 
 def bandpass(din,dt,flo=0,fhi=0.5,nplo=6,nphi=6,phase=0,verb=1):
 	'''
@@ -125,65 +124,6 @@ def bandpass(din,dt,flo=0,fhi=0.5,nplo=6,nphi=6,phase=0,verb=1):
 	dout=np.squeeze(dout);
 	return dout
 
-def bandpassc(din,dt,flo=0,fhi=0.5,nplo=6,nphi=6,phase=0,verb=1):
-	'''
-	bandpass: Bandpass filtering.
-	
-	Aug, 05, 2020
-	by Yangkang Chen
-	
-	INPUT
-	din:	  input data
-	dt:       sampling
-	flo:      Low frequency in band, default is 0
-	fhi:      High frequency in band, default is Nyquist
-	nplo=6:   number of poles for low cutoff
-	nphi=6:   number of poles for high cutoff
-	phase=0:  y: minimum phase, n: zero phase
-	verb=0:   verbosity flag
-	
-	OUTPUT
-	dout:     output data
-	
-	RFERENCE
-	November 2012 program of the month: http://ahay.org/blog/2012/11/03/program-of-the-month-sfbandpass/
-	
-	EXAMPLE 1
-	demos/test_pyseistr_das.py
-	
-	EXAMPLE 2
-	from pyseistr import ricker;
-	wav,tw=ricker(20,0.004,2);
-	from pyseistr import bandpassc;
-	wav2=bandpassc(wav,0.004,flo=0,fhi=20);
-	
-	import matplotlib.pyplot as plt;
-	figsize=(8, 8)
-	plt.subplot(2,1,1);
-	plt.plot(tw,wav);plt.ylabel('Amplitude');plt.gca().set_ylim([-0.5,1]);
-	plt.subplot(2,1,2);
-	plt.plot(tw,wav2);plt.xlabel('Time (s)');plt.ylabel('Amplitude');plt.gca().set_ylim([-0.5,1]);
-	plt.show();
-	
-	'''
-	if din.ndim==1:	#for 1D problems
-		din=np.expand_dims(din, axis=1)
-		
-	if din.ndim==2:	#for 2D problems
-		din=np.expand_dims(din, axis=2)
-		
-	if din.shape[0]==1 and din.shape[1]>1 and din.shape[2]==1: #row vector
-		din=din.flatten();
-
-	[n1,n2,n3]=din.shape;
-		
-	din=np.float32(din).flatten(order='F');
-	dout=cbp(din,n1,n2,n3,dt,flo,fhi,nplo,nphi,phase,verb);
-	dout=dout.reshape(n1,n2,n3,order='F');
-
-	if n3==1:
-		dout=np.squeeze(dout);
-	return dout
 	
 def butter_init(low,cutoff,nn):
 	'''

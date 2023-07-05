@@ -27,9 +27,9 @@ def bandpass(din,dt,flo=0,fhi=0.5,nplo=6,nphi=6,phase=0,verb=1):
 	demos/test_pyseistr_das.py
 	
 	EXAMPLE 2
-	from pyseistr import ricker;
+	from pyseistrw import ricker;
 	wav,tw=ricker(20,0.004,2);
-	from pyseistr import bandpass;
+	from pyseistrw import bandpass;
 	wav2=bandpass(wav,0.004,flo=0,fhi=20);
 	
 	import matplotlib.pyplot as plt;

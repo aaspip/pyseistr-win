@@ -20,7 +20,7 @@ def somf2d(dn,dip,ns,order,eps,option=1):
 	Chen, Y., 2015, Deblending using a space-varying median filter, Exploration Geophysics, 46, 332-341.
 	
 	EXAMPLE
-	demos/test_xxx_somf2d.py
+	demos/test_pyseistr_somf2d.py
 	'''
 	
 	import numpy as np

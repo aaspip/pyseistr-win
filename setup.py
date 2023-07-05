@@ -19,7 +19,7 @@ def read(*names, **kwargs):
 
 setup(
     name="pyseistr-win",
-    version="0.0.1.1",
+    version="0.0.1.2",
     license='GNU General Public License, Version 3 (GPLv3)',
     description="A python package for structural denoising and interpolation of multi-channel seismic data",
     long_description=long_description,

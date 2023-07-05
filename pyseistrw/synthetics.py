@@ -13,13 +13,13 @@ def gensyn(noise=False,seed=202122,var=0.2):
 	case 2. data,noisy: noisy case
 		
 	EXAMPLE 1
-	from pyseistr import gensyn
+	from pyseistrw import gensyn
 	data=gensyn();
 	import matplotlib.pyplot as plt;
 	plt.imshow(data);plt.ylabel('Time sample');plt.xlabel('Trace');plt.show();
 
 	EXAMPLE 2
-	from pyseistr import gensyn
+	from pyseistrw import gensyn
 	data,noisy=gensyn(noise=True);
 	import matplotlib.pyplot as plt;
 	plt.subplot(1,2,1);plt.imshow(data,clim=[-0.2,0.2],aspect='auto');plt.xlabel('Trace');plt.ylabel('Time sample');
@@ -63,7 +63,7 @@ def genflat(nt=100,nx=60,t=[30,50,80],amp=[1,1,1],freq=30,dt=0.004):
 	data: synthetic data
 	
 	EXAMPLE
-	from pyseistr import genflat
+	from pyseistrw import genflat
 	data=genflat();
 	import matplotlib.pyplot as plt;
 	plt.imshow(data);plt.ylabel('Time sample');plt.xlabel('Trace');plt.show();
@@ -105,19 +105,19 @@ def sigmoid(n1=400,n2=100,d1=0.004,d2=0.032,o1=0,o2=0,large=None,reflectivity=Tr
 	https://reproducibility.org/blog/2014/10/08/program-of-the-month-sfsigmoid/
 	
 	EXAMPLE 1
-	from pyseistr import sigmoid
+	from pyseistrw import sigmoid
 	data=sigmoid();
 	import matplotlib.pyplot as plt;
 	plt.imshow(data,aspect='auto');plt.ylabel('Time sample');plt.xlabel('Trace');plt.show();
 
 	EXAMPLE 2
-	from pyseistr import sigmoid
+	from pyseistrw import sigmoid
 	data=sigmoid(sd=2024);
 	import matplotlib.pyplot as plt;
 	plt.imshow(data,aspect='auto');plt.ylabel('Time sample');plt.xlabel('Trace');plt.show();
 	
 	EXAMPLE 3 (set "static long int seed = 1996;" in "RSFSRC/user/gee/random.c")
-	from pyseistr import sigmoid
+	from pyseistrw import sigmoid
 	data=sigmoid(n1=200,n2=210);
 	import m8r,os,numpy as np
 	os.system('sfsigmoid n1=200 n2=210 d2=0.008>tt.rsf')

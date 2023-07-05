@@ -11,9 +11,9 @@ def fkdip(d,w):
 	d0: output data
 	
 	EXAMPLE
-	import pyseistr as ps
-	from pyseistr import gensyn
-	from pyseistr import genflat
+	import pyseistrw as ps
+	from pyseistrw import gensyn
+	from pyseistrw import genflat
 	import numpy as np
 	data=gensyn();[nt,nx]=data.shape;
 	noise=genflat(nt,nx,t=np.linspace(5,10*36,37,dtype='int32'),amp=0.5*np.ones(37),freq=80);

@@ -15,8 +15,8 @@ def smooth(din,rect=[1,1,1],diff=[0,0,0],box=[0,0,0],repeat=1,adj=1):
 	dout:	smoothed data
 	
 	EXAMPLE 1
-	from pyseistr import smooth
-	from pyseistr import gensyn
+	from pyseistrw import smooth
+	from pyseistrw import gensyn
 	import matplotlib.pyplot as plt;
 	
 	data,noisy=gensyn(noise=True);
@@ -35,8 +35,8 @@ def smooth(din,rect=[1,1,1],diff=[0,0,0],box=[0,0,0],repeat=1,adj=1):
 	plt.show()
 	
 	EXAMPLE 2 (set "static long int seed = 1996;" in "RSFSRC/user/gee/random.c")
-	from pyseistr import sigmoid
-	from pyseistr import smooth
+	from pyseistrw import sigmoid
+	from pyseistrw import smooth
 	data=sigmoid(n1=200,n2=210);
 	data1=smooth(data,rect=[3,3,1],diff=[1,0,0],adj=1);
 	

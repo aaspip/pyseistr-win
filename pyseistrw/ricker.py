@@ -12,7 +12,7 @@ def ricker(f,dt,tlength=None):
 	tw: time axis
 	
 	EXAMPLE
-	from pyseistr import ricker;
+	from pyseistrw import ricker;
 	wav,tw=ricker(20,0.004,2);
 	import matplotlib.pyplot as plt;
 	plt.plot(tw,wav);plt.xlabel('Time (s)');plt.ylabel('Amplitude');plt.show();

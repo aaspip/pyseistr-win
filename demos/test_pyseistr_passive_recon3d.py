@@ -20,7 +20,7 @@ mask=mask.reshape(n1,n2,n3,order='F');
 ## 3D slope calculation (inline and xline)
 import pyseistrw as ps
 import matplotlib.pyplot as plt
-[dipi,dipx] = ps.dip3d(d0,mask=mask,niter=10,rect=[10, 5, 5]); #[dipi,dipx] = ps.dip3d(d0); is the one used in the paper
+[dipi,dipx] = ps.dip3d(d0,niter=10,rect=[10, 5, 5]); #[dipi,dipx] = ps.dip3d(d0); is the one used in the paper
 
 ## 3D structure-oriented interpolation
 d1=ps.soint3d(d0,mask,dipi,dipx,order=2,niter=20,njs=[1,1],drift=0,verb=1);

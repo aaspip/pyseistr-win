@@ -3,7 +3,7 @@
 
 ## Description
 
-**pyseistr-win** is the Windows version of the pyseistr package, a python package for structural denoising and interpolation of multi-channel seismic data. The latest version has incorporated both Python and C (hundreds of times faster) implementations of the embedded functions. We keep both implementations for both educational and production purposes. This package has a variety of applications in both exploration and earthquake seismology.
+**pyseistr-win** is the Windows version of the pyseistr package, a python package for structural denoising and interpolation of multi-channel seismic data. The latest version (https://github.com/aaspip/pyseistr) has incorporated both Python and C (hundreds of times faster) implementations of the embedded functions. We keep both implementations for both educational and production purposes. This package has a variety of applications in both exploration and earthquake seismology.
 
 ## Reference
 Chen et al., 2023, pyseistr: a python package for structural denoising and interpolation of multi-channel seismic data, Seismological Research Letters, 94(3), 1703-1714. 
